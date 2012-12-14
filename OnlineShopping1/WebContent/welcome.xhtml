@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.prime.com.tr/ui">
+ 
+<h:head>
+    <title>Welcome to JSF_PrimeFaces Project</title>
+</h:head>
+<body>
+ <h:form>
+<center>
+		<h2>Account Creation Form</h2>
+		<h:form>
+			<p:fieldset legend="Account Creation Form" widgetVar="regWidget"
+				style="width: 600px;">
+				<h:panelGrid id="panel" columns="3" width="550" border="0">
+					<h:outputLabel value="Name" />
+					<p:inputText value="#{loginAction.account.name}"
+						id="firstName" required="true"
+						requiredMessage="Name is required"
+						validatorMessage="Name should be of length from 5 to 15 chars">
+						<f:validateLength minimum="5" maximum="15" for="firstName"></f:validateLength>
+					</p:inputText>
+					<p:message for="firstName" />
+
+					
+					<h:outputLabel value="Description" />
+					<p:inputText value="#{loginAction.account.description}"
+						id="username" required="true"
+						requiredMessage="Description is required"
+						validatorMessage="Description should be of length from 5 to 15 chars">
+						<f:validateLength minimum="5" maximum="15" for="username"></f:validateLength>
+					</p:inputText>
+					<p:message for="username" />
+					
+					<h:outputLabel value="ReferenceID" />
+					<p:inputText value="#{loginAction.account.referenceId}"
+						id="lastName"></p:inputText>
+					<p:message for="lastName" />
+
+					
+					
+ 
+					
+				</h:panelGrid>
+				
+					<p:commandButton value="Create Account"
+						action="#{loginAction.createAccount}" ajax="false"></p:commandButton>
+			</p:fieldset>
+		</h:form>
+		
+		
+	</center>
+</h:form>
+    
+</body>
+</html>
